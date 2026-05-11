@@ -5,90 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas - Man and Women</title>
     <style>
+        /* Fondo principal liso para mayor limpieza */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #0b1e3b; 
+            background-color: #0b1e3b; /* Azul profundo del logo */
             display: flex; 
             justify-content: center; 
             align-items: center;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
-            position: relative;
-            overflow-x: hidden;
+            box-sizing: border-box;
         }
 
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url('Logo Circular.jpeg'); 
+        /* La tarjeta blanca mejorada con el logo dentro */
+        .card { 
+            /* Fondo: Primero un degradado blanco transparente, luego el logo */
+            background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('Logo Circular.jpeg'); 
             background-repeat: no-repeat;
             background-position: center;
-            background-size: contain;
-            opacity: 0.5; 
-            z-index: -1;
-        }
+            background-size: contain; /* El logo se adapta perfectamente dentro de la tarjeta */
+            background-attachment: initial; /* Asegura que el logo no se mueva al hacer scroll */
 
-        .card { 
-            background: rgba(255, 255, 255, 0.95); 
             padding: 30px; 
             border-radius: 15px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
             width: 100%; 
             max-width: 400px;
-            border: 2px solid #c5a059; 
+            border: 2px solid #c5a059; /* Borde dorado corporativo */
+            position: relative;
+            z-index: 1; /* Asegura que la tarjeta esté sobre el fondo liso */
         }
 
         h2 { 
-            color: #0b1e3b; 
+            color: #0b1e3b; /* Azul para el título */
             text-align: center; 
             margin-top: 0;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            font-weight: 800;
         }
 
         label { 
             display: block; 
-            margin: 15px 0 5px; 
+            margin: 15px 0 6px; 
             font-weight: bold; 
-            color: #333;
+            color: #222; /* Un gris oscuro para buena lectura */
+            font-size: 14px;
         }
 
         input, select { 
             width: 100%; 
-            padding: 12px; 
-            margin-bottom: 10px; 
-            border: 1px solid #ccc; 
+            padding: 14px; 
+            margin-bottom: 12px; 
+            border: 1px solid #ddd; 
             border-radius: 8px; 
             box-sizing: border-box; 
-            background-color: white;
+            background-color: rgba(255,255,255,0.9); /* Ligeramente opaco para ver el logo detrás */
+            font-size: 14px;
+            color: #333;
         }
 
         button { 
-            background-color: #c5a059; 
-            color: #0b1e3b; 
+            background-color: #c5a059; /* Dorado del logo */
+            color: #0b1e3b; /* Texto azul oscuro */
             border: none; 
-            padding: 15px;
+            padding: 16px;
             width: 100%;
             border-radius: 8px;
-            font-weight: bold; 
+            font-weight: 800; 
             cursor: pointer; 
             font-size: 16px; 
-            margin-top: 20px;
-            transition: background 0.3s;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         button:hover { 
-            background-color: #e2c07d; 
+            background-color: #e2c07d; /* Dorado más claro */
+            box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
         }
 
         .brand-footer {
             text-align: center;
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 12px;
-            color: #c5a059;
+            color: #c5a059; /* Dorado */
             font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
