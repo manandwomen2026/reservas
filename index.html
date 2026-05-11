@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas - Man and Women</title>
     <style>
-        /* Estilos generales con los colores del logo */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #0b1e3b; /* Azul profundo del logo */
+            background-color: #0b1e3b; 
             display: flex; 
             justify-content: center; 
             align-items: center;
@@ -16,19 +15,18 @@
             margin: 0;
             padding: 20px;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
-        /* Logo de fondo con 50% de opacidad */
         body::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url('Logo Circular.jpeg'); /* Asegúrate que el archivo esté en la misma carpeta */
+            background-image: url('Logo Circular.jpeg'); 
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
-            opacity: 0.5; /* Opacidad solicitada */
+            opacity: 0.5; 
             z-index: -1;
         }
 
@@ -39,7 +37,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
             width: 100%; 
             max-width: 400px;
-            border: 2px solid #c5a059; /* Borde dorado */
+            border: 2px solid #c5a059; 
         }
 
         h2 { 
@@ -64,11 +62,12 @@
             border: 1px solid #ccc; 
             border-radius: 8px; 
             box-sizing: border-box; 
+            background-color: white;
         }
 
         button { 
-            background-color: #c5a059; /* Dorado del logo */
-            color: #0b1e3b; /* Texto en azul oscuro para contraste */
+            background-color: #c5a059; 
+            color: #0b1e3b; 
             border: none; 
             padding: 15px;
             width: 100%;
@@ -81,7 +80,7 @@
         }
 
         button:hover { 
-            background-color: #e2c07d; /* Dorado más claro al pasar el mouse */
+            background-color: #e2c07d; 
         }
 
         .brand-footer {
@@ -89,6 +88,7 @@
             margin-top: 15px;
             font-size: 12px;
             color: #c5a059;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -98,42 +98,48 @@
     <h2>Agendar Cita</h2>
     <form id="reservationForm">
         <label>Nombre del Cliente:</label>
-        <input type="text" id="name" placeholder="Escribe tu nombre" required>
+        <input type="text" id="name" placeholder="Tu nombre completo" required>
 
-        <label>Servicio Estético:</label>
+        <label>¿Qué servicio buscas?</label>
         <select id="service">
-            <option value="Barbería/Corte">Barbería / Corte</option>
-            <option value="Estética Facial">Estética Facial</option>
-            <option value="Manicura/Pedicura">Manicura / Pedicura</option>
-            <option value="Tratamiento Corporal">Tratamiento Corporal</option>
+            <option value="Barbero">Barbero</option>
+            <option value="Estilista">Estilista</option>
+            <option value="Manicurista">Manicurista</option>
+        </select>
+
+        <label>¿Quién quieres que te atienda?</label>
+        <select id="professional">
+            <option value="Cualquier profesional disponible">Cualquier profesional</option>
+            <option value="Profesional 1">Profesional 1</option>
+            <option value="Profesional 2">Profesional 2</option>
         </select>
 
         <label>Fecha de la Cita:</label>
         <input type="date" id="date" required>
 
-        <label>Hora de la Cita:</label>
-<select id="time" required>
-    <option value="" disabled selected>Selecciona una hora</option>
-    <option value="09:00 AM">09:00 AM</option>
-    <option value="09:30 AM">09:30 AM</option>
-    <option value="10:00 AM">10:00 AM</option>
-    <option value="10:30 AM">10:30 AM</option>
-    <option value="11:00 AM">11:00 AM</option>
-    <option value="11:30 AM">11:30 AM</option>
-    <option value="12:00 PM">12:00 PM</option>
-    <option value="12:30 PM">12:30 PM</option>
-    <option value="01:00 PM">01:00 PM</option>
-    <option value="01:30 PM">01:30 PM</option>
-    <option value="02:00 PM">02:00 PM</option>
-    <option value="02:30 PM">02:30 PM</option>
-    <option value="03:00 PM">03:00 PM</option>
-    <option value="03:30 PM">03:30 PM</option>
-    <option value="04:00 PM">04:00 PM</option>
-    <option value="04:30 PM">04:30 PM</option>
-    <option value="05:00 PM">05:00 PM</option>
-    <option value="05:30 PM">05:30 PM</option>
-    <option value="06:00 PM">06:00 PM</option>
-</select>
+        <label>Hora de la Cita (9am - 6pm):</label>
+        <select id="time" required>
+            <option value="" disabled selected>Selecciona una hora</option>
+            <option value="09:00 AM">09:00 AM</option>
+            <option value="09:30 AM">09:30 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="10:30 AM">10:30 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="11:30 AM">11:30 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="12:30 PM">12:30 PM</option>
+            <option value="01:00 PM">01:00 PM</option>
+            <option value="01:30 PM">01:30 PM</option>
+            <option value="02:00 PM">02:00 PM</option>
+            <option value="02:30 PM">02:30 PM</option>
+            <option value="03:00 PM">03:00 PM</option>
+            <option value="03:30 PM">03:30 PM</option>
+            <option value="04:00 PM">04:00 PM</option>
+            <option value="04:30 PM">04:30 PM</option>
+            <option value="05:00 PM">05:00 PM</option>
+            <option value="05:30 PM">05:30 PM</option>
+            <option value="06:00 PM">06:00 PM</option>
+        </select>
 
         <button type="button" onclick="sendToWhatsApp()">RESERVAR POR WHATSAPP</button>
     </form>
@@ -142,21 +148,22 @@
 
 <script>
     function sendToWhatsApp() {
-        const phone = "573104073119"; // Número actualizado
+        const phone = "573104073119"; 
         const name = document.getElementById('name').value;
         const service = document.getElementById('service').value;
+        const professional = document.getElementById('professional').value;
         const date = document.getElementById('date').value;
         const time = document.getElementById('time').value;
 
         if(!name || !date || !time) {
-            alert("Por favor, llena todos los datos para tu reserva.");
+            alert("Por favor, llena todos los campos para agendar tu cita.");
             return;
         }
 
-        // Estructura del mensaje para WhatsApp
         const message = `*NUEVA RESERVA - MAN AND WOMEN*%0A%0A` +
                         `*Cliente:* ${name}%0A` +
                         `*Servicio:* ${service}%0A` +
+                        `*Profesional:* ${professional}%0A` +
                         `*Fecha:* ${date}%0A` +
                         `*Hora:* ${time}%0A%0A` +
                         `Favor confirmar disponibilidad.`;
